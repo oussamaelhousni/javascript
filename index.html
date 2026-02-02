@@ -1,0 +1,1619 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Présentation JavaScript & React</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .slide {
+        display: none;
+        min-height: 550px;
+        padding: 4rem;
+      }
+      .slide.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      pre {
+        background-color: #f4f4f5;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        overflow-x: auto;
+        font-size: 0.9rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        white-space: pre-wrap;
+      }
+      code {
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4"
+  >
+    <div
+      id="presentation"
+      class="w-full max-w-5xl bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col"
+    >
+      <!-- Slides Container -->
+      <div id="slides-container" class="flex-grow">
+        <!-- SLIDE 1: TITRE -->
+        <div class="slide text-center bg-sky-500 text-white">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/05/Logo_ofppt.png"
+            alt="Logo OFPPT"
+            class="w-32 h-32 mb-8 rounded-xl bg-white shadow-lg p-3 mx-auto border border-white/30 hover:scale-105 transition-transform duration-300"
+          />
+
+          <!-- Title -->
+          <h1
+            class="text-5xl font-extrabold tracking-tight drop-shadow-lg mb-3"
+          >
+            Programmer in JavaScript
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="text-2xl font-medium opacity-90 mb-6">
+            Formation Interactive et Pratique
+          </p>
+
+          <!-- Trainer Info -->
+          <p
+            class="text-lg font-light tracking-wide bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm shadow-sm"
+          >
+            <span class="font-semibold text-yellow-300">Formateur :</span>
+            Oussama Elhousni
+          </p>
+        </div>
+        <!-- SLIDE A1: INTRODUCTION À JAVASCRIPT -->
+        <div class="slide">
+          <h2 class="text-4xl font-bold text-gray-800 mb-6">
+            1. Introduction à JavaScript
+          </h2>
+
+          <ul class="list-disc pl-6 space-y-4 text-xl text-gray-700">
+            <li>
+              <b>Qu'est-ce que JavaScript ?</b><br />
+              JavaScript est un langage de programmation utilisé pour rendre les
+              pages web interactives et dynamiques.
+            </li>
+
+            <li>
+              <b>Pourquoi les entreprises l'utilisent ?</b><br />
+              Parce qu'il fonctionne sur tous les navigateurs, est rapide,
+              flexible et permet de créer des applications modernes.
+            </li>
+          </ul>
+        </div>
+
+        <!-- SLIDE A2: HISTOIRE ET COMPARAISON HTML CSS JS -->
+        <div class="slide">
+          <h2 class="text-4xl font-bold text-gray-800 mb-6">
+            JavaScript, HTML et CSS : rôles clairs
+          </h2>
+
+          <h3 class="font-bold text-2xl text-sky-600 mb-3">Histoire rapide</h3>
+          <p class="text-xl text-gray-700 mb-6">
+            JavaScript a été créé en 1995 par <b>Brendan Eich</b> chez
+            <b>Netscape Communications</b>. Son objectif était de rendre les
+            pages web interactives sans recharger la page. Aujourd'hui,
+            JavaScript est utilisé par des millions d'entreprises dans le monde.
+          </p>
+
+          <div class="grid grid-cols-3 gap-6 text-lg text-gray-700">
+            <div>
+              <h4 class="font-bold text-xl text-blue-600">HTML</h4>
+              <p>
+                Langage de structure.<br />
+                Définit le contenu de la page : titres, textes, images,
+                formulaires.
+              </p>
+              <p class="mt-2 text-sm text-gray-500">
+                Exemple : titre, bouton, formulaire
+              </p>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-xl text-purple-600">CSS</h4>
+              <p>
+                Langage de présentation.<br />
+                Gère l'apparence visuelle : couleurs, tailles, alignement,
+                responsive design.
+              </p>
+              <p class="mt-2 text-sm text-gray-500">
+                Exemple : design, animations, layout
+              </p>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-xl text-emerald-600">JavaScript</h4>
+              <p>
+                Langage de programmation.<br />
+                Gère le comportement : clics, calculs, logique, communication
+                serveur.
+              </p>
+              <p class="mt-2 text-sm text-gray-500">
+                Exemple : panier e-commerce, validation de formulaire
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE A3: CE QUE JAVASCRIPT PEUT FAIRE -->
+        <div class="slide">
+          <h2 class="text-4xl font-bold text-gray-800 mb-6">
+            Ce que JavaScript peut faire
+          </h2>
+
+          <ul class="list-disc pl-6 space-y-4 text-xl text-gray-700">
+            <li>Sites e-commerce (panier, paiement, filtres produits)</li>
+            <li>Applications web (Facebook, Gmail, Google Maps)</li>
+            <li>Validation des formulaires en temps réel</li>
+            <li>Animations et interactions utilisateur</li>
+            <li>Communication avec des serveurs (API)</li>
+          </ul>
+        </div>
+
+        <!-- SLIDE A4: OÙ JS S'EXÉCUTE ET OPPORTUNITÉS -->
+        <div class="slide">
+          <h2 class="text-4xl font-bold text-gray-800 mb-6">
+            Où JavaScript s'exécute et opportunités
+          </h2>
+
+          <h3 class="font-bold text-2xl text-sky-600 mb-3">
+            Où JavaScript s'exécute
+          </h3>
+          <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700 mb-6">
+            <li>Navigateur web (Chrome, Firefox, Edge)</li>
+            <li>Serveur avec Node.js</li>
+            <li>Applications mobiles et desktop</li>
+          </ul>
+
+          <h3 class="font-bold text-2xl text-emerald-600 mb-3">
+            Métiers et opportunités au Maroc
+          </h3>
+          <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700">
+            <li>Développeur Front-end (React, Vue)</li>
+            <li>Développeur Back-end (Node.js)</li>
+            <li>Développeur Full Stack</li>
+            <li>Freelance et travail à distance</li>
+          </ul>
+        </div>
+<!-- SLIDE B1: ENVIRONNEMENT DE DÉVELOPPEMENT -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    2. Environnement de développement
+  </h2>
+
+  <ul class="list-disc pl-6 space-y-4 text-xl text-gray-700">
+    <li>
+      <b>Environnement de développement</b> : ensemble des outils utilisés
+      pour écrire, tester et déboguer du code JavaScript.
+    </li>
+    <li>
+      Un bon environnement permet de travailler plus vite et avec moins d'erreurs.
+    </li>
+    <li>
+      Les outils principaux : éditeur de code + navigateur web.
+    </li>
+  </ul>
+</div>
+
+<!-- SLIDE B2: ÉDITEUR DE CODE - VS CODE -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Choisir un éditeur de code
+  </h2>
+
+  <h3 class="font-bold text-2xl text-sky-600 mb-4">
+    Visual Studio Code (recommandé)
+  </h3>
+
+  <ul class="list-disc pl-6 space-y-3 text-xl text-gray-700">
+    <li>Gratuit et développé par Microsoft</li>
+    <li>Très utilisé par les développeurs professionnels</li>
+    <li>Supporte JavaScript, HTML, CSS, React, Node.js</li>
+    <li>Fonctionne sur Windows, Linux et macOS</li>
+  </ul>
+
+  <p class="text-lg text-gray-500 mt-4 italic">
+    VS Code est aujourd'hui l'éditeur le plus utilisé dans le monde du web.
+  </p>
+</div>
+
+<!-- SLIDE B3: EXTENSIONS VS CODE UTILES -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Extensions VS Code utiles
+  </h2>
+
+  <div class="grid grid-cols-2 gap-6 text-xl text-gray-700">
+    <div>
+      <h4 class="font-bold text-emerald-600">Live Server</h4>
+      <p>
+        Lance automatiquement le navigateur et recharge la page
+        à chaque modification.
+      </p>
+    </div>
+
+    <div>
+      <h4 class="font-bold text-emerald-600">Prettier</h4>
+      <p>
+        Formate automatiquement le code pour le rendre propre et lisible.
+      </p>
+    </div>
+
+    <div>
+      <h4 class="font-bold text-emerald-600">ESLint</h4>
+      <p>
+        Détecte les erreurs et les mauvaises pratiques JavaScript.
+      </p>
+    </div>
+
+    <div>
+      <h4 class="font-bold text-emerald-600">JavaScript (ES6) Snippets</h4>
+      <p>
+        Aide à écrire du code plus rapidement avec des raccourcis.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE B4: PREMIER FICHIER JAVASCRIPT -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Créer son premier fichier JavaScript
+  </h2>
+
+  <ul class="list-disc pl-6 space-y-3 text-xl text-gray-700">
+    <li>Créer un dossier de projet</li>
+    <li>Créer un fichier <b>index.html</b></li>
+    <li>Créer un fichier <b>script.js</b></li>
+    <li>Lier JavaScript au HTML</li>
+  </ul>
+
+  <pre><code>&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+</div>
+
+<!-- SLIDE B5: CONSOLE DU NAVIGATEUR -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Console du navigateur (Chrome DevTools)
+  </h2>
+
+  <ul class="list-disc pl-6 space-y-3 text-xl text-gray-700">
+    <li>Ouvrir Chrome</li>
+    <li>Clic droit → Inspecter</li>
+    <li>Onglet <b>Console</b></li>
+    <li>Permet d'afficher des messages et des erreurs</li>
+  </ul>
+
+  <pre><code>console.log("Test JavaScript");</code></pre>
+
+  <p class="text-lg text-gray-500 mt-4 italic">
+    La console est l'outil principal pour comprendre ce que fait votre code.
+  </p>
+</div>
+
+<!-- SLIDE B6: PREMIER HELLO WORLD -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Votre premier "Hello World"
+  </h2>
+
+  <p class="text-xl text-gray-700 mb-4">
+    Le programme le plus simple pour vérifier que JavaScript fonctionne.
+  </p>
+
+  <pre><code>// script.js
+console.log("Hello World");
+alert("Hello World");</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700 mt-4">
+    <li><b>console.log</b> : affiche un message dans la console</li>
+    <li><b>alert</b> : affiche une boîte de dialogue</li>
+  </ul>
+</div>
+<!-- SLIDE C1: FONCTIONNEMENT DE JAVASCRIPT DANS LE NAVIGATEUR -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    3. Fonctionnement de JavaScript dans le navigateur
+  </h2>
+
+  <ul class="list-disc pl-6 space-y-4 text-xl text-gray-700">
+    <li>
+      Le navigateur lit et interprète les fichiers <b>HTML</b>, <b>CSS</b>
+      et <b>JavaScript</b>.
+    </li>
+    <li>
+      Chaque type de fichier a un rôle précis dans le chargement de la page.
+    </li>
+    <li>
+      Comprendre cet ordre évite beaucoup d'erreurs courantes.
+    </li>
+  </ul>
+</div>
+
+<!-- SLIDE C2: COMMENT LE NAVIGATEUR LIT HTML CSS JS -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Comment le navigateur lit HTML, CSS et JavaScript
+  </h2>
+
+  <ol class="list-decimal pl-6 space-y-4 text-xl text-gray-700">
+    <li>
+      <b>HTML</b> : le navigateur construit la structure de la page (DOM).
+    </li>
+    <li>
+      <b>CSS</b> : il applique le style (couleurs, positions, tailles).
+    </li>
+    <li>
+      <b>JavaScript</b> : il exécute le code pour ajouter du comportement.
+    </li>
+  </ol>
+
+  <p class="text-xl text-gray-600 mt-4 italic">
+    Si JavaScript est exécuté trop tôt, les éléments HTML peuvent ne pas exister.
+  </p>
+</div>
+
+<!-- SLIDE C3: BALISE SCRIPT ET EMPLACEMENT -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    La balise &lt;script&gt;
+  </h2>
+
+  <h3 class="font-bold text-2xl text-sky-600 mb-3">
+    Où placer la balise script ?
+  </h3>
+
+  <ul class="list-disc pl-6 space-y-3 text-xl text-gray-700">
+    <li>
+      <b>En bas du &lt;body&gt;</b> (recommandé pour débutants)
+    </li>
+    <li>
+      Permet au HTML d'être chargé avant l'exécution de JavaScript
+    </li>
+    <li>
+      Évite les erreurs liées aux éléments non encore chargés
+    </li>
+  </ul>
+
+  <pre><code>&lt;body&gt;
+  &lt;h1&gt;Ma page&lt;/h1&gt;
+
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+</div>
+
+<!-- SLIDE C4: INLINE VS FICHIER EXTERNE -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Scripts inline vs fichiers externes
+  </h2>
+
+  <div class="grid grid-cols-2 gap-6 text-xl text-gray-700">
+    <div>
+      <h3 class="font-bold text-emerald-600">Script inline</h3>
+      <p>
+        Code JavaScript écrit directement dans le HTML.
+      </p>
+      <pre><code>&lt;script&gt;
+alert("Bonjour");
+&lt;/script&gt;</code></pre>
+      <p class="text-sm text-gray-500">
+        À éviter pour les grands projets
+      </p>
+    </div>
+
+    <div>
+      <h3 class="font-bold text-emerald-600">Fichier externe</h3>
+      <p>
+        Code JavaScript dans un fichier séparé.
+      </p>
+      <pre><code>&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+      <p class="text-sm text-gray-500">
+        Meilleure pratique professionnelle
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE C5: ORDRE D'EXÉCUTION ET ERREURS -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Ordre d'exécution et erreurs courantes
+  </h2>
+
+  <ul class="list-disc pl-6 space-y-4 text-xl text-gray-700">
+    <li>
+      JavaScript est exécuté <b>ligne par ligne</b>
+    </li>
+    <li>
+      Une erreur peut bloquer l'exécution du reste du script
+    </li>
+    <li>
+      Exemple d'erreur fréquente : élément HTML non trouvé
+    </li>
+  </ul>
+
+  <pre><code>const btn = document.getElementById("bouton");
+btn.addEventListener("click", () => {
+  console.log("Clique");
+});
+// Erreur si l'élément n'existe pas encore</code></pre>
+</div>
+
+<!-- SLIDE C6: CONSOLE ET OUTILS DÉVELOPPEUR -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Console et outils développeur (pratique)
+  </h2>
+
+  <ul class="list-disc pl-6 space-y-3 text-xl text-gray-700">
+    <li>Ouvrir la page dans le navigateur</li>
+    <li>Clic droit → Inspecter</li>
+    <li>Onglet <b>Console</b></li>
+    <li>Voir les messages, erreurs et tests</li>
+  </ul>
+
+  <pre><code>console.log("Page chargée");
+console.error("Erreur détectée");
+console.warn("Attention");</code></pre>
+
+  <p class="text-lg text-gray-500 mt-4 italic">
+    La console est votre meilleur ami pour comprendre et corriger votre code.
+  </p>
+</div>
+<!-- SLIDE D1: BASES ET SYNTAXE JAVASCRIPT -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    4. Bases et syntaxe JavaScript
+  </h2>
+
+  <ul class="list-disc pl-6 space-y-4 text-xl text-gray-700">
+    <li>
+      La syntaxe définit les règles d'écriture du langage JavaScript.
+    </li>
+    <li>
+      Une petite erreur de syntaxe peut bloquer tout le programme.
+    </li>
+    <li>
+      Comprendre les bases évite les erreurs fréquentes chez les débutants.
+    </li>
+  </ul>
+</div>
+
+<!-- SLIDE D2: INSTRUCTIONS ET EXPRESSIONS -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Instructions et expressions
+  </h2>
+
+  <h3 class="font-bold text-2xl text-sky-600 mb-3">
+    Différence claire
+  </h3>
+
+  <ul class="list-disc pl-6 space-y-4 text-xl text-gray-700">
+    <li>
+      <b>Instruction</b> : ordre donné à JavaScript pour exécuter une action.
+    </li>
+    <li>
+      <b>Expression</b> : produit une valeur.
+    </li>
+  </ul>
+
+  <pre><code>// Instruction
+let x = 5;
+
+// Expression
+5 + 3      // produit 8
+
+// Expression dans une instruction
+let y = 5 + 3;</code></pre>
+</div>
+
+<!-- SLIDE D3: COMMENTAIRES ET SENSIBILITÉ À LA CASSE -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Commentaires et sensibilité à la casse
+  </h2>
+
+  <h3 class="font-bold text-2xl text-emerald-600 mb-3">
+    Commentaires
+  </h3>
+
+  <ul class="list-disc pl-6 space-y-3 text-xl text-gray-700">
+    <li>
+      Les commentaires servent à expliquer le code.
+    </li>
+    <li>
+      Ils ne sont pas exécutés par JavaScript.
+    </li>
+  </ul>
+
+  <pre><code>// Commentaire sur une ligne
+
+/*
+  Commentaire
+  sur plusieurs lignes
+*/</code></pre>
+
+  <h3 class="font-bold text-2xl text-red-600 mt-4">
+    Sensibilité à la casse
+  </h3>
+
+  <p class="text-xl text-gray-700">
+    JavaScript fait la différence entre majuscules et minuscules.
+  </p>
+
+  <pre><code>let nom = "Ali";
+let Nom = "Sara";
+
+console.log(nom); // "Ali"
+console.log(Nom); // "Sara"</code></pre>
+</div>
+
+<!-- SLIDE D4: POINT-VIRGULE -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Point-virgule en JavaScript
+  </h2>
+
+  <ul class="list-disc pl-6 space-y-4 text-xl text-gray-700">
+    <li>
+      Le point-virgule <b>;</b> termine une instruction.
+    </li>
+    <li>
+      JavaScript peut l'ajouter automatiquement (ASI).
+    </li>
+    <li>
+      Mais dans certains cas, il est <b>obligatoire</b>.
+    </li>
+  </ul>
+
+  <pre><code>// Correct
+let a = 10;
+let b = 20;
+
+// Problème possible sans ;
+let x = 10
+(function () {
+  console.log("Hello");
+})();
+</code></pre>
+
+  <p class="text-lg text-gray-500 italic mt-4">
+    Bonne pratique : toujours utiliser le point-virgule.
+  </p>
+</div>
+
+<!-- SLIDE D5: INDENTATION ET LISIBILITÉ -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Indentation et lisibilité du code
+  </h2>
+
+  <p class="text-xl text-gray-700 mb-4">
+    L'indentation rend le code lisible et compréhensible.
+  </p>
+
+  <div class="grid grid-cols-2 gap-6">
+    <div>
+      <h3 class="font-bold text-red-600 text-xl mb-2">
+        Mauvaise indentation
+      </h3>
+      <pre><code>if(true){
+console.log("OK");
+if(false){
+console.log("Non");
+}
+}</code></pre>
+    </div>
+
+    <div>
+      <h3 class="font-bold text-emerald-600 text-xl mb-2">
+        Bonne indentation
+      </h3>
+      <pre><code>if (true) {
+  console.log("OK");
+  if (false) {
+    console.log("Non");
+  }
+}</code></pre>
+    </div>
+  </div>
+
+  <p class="text-lg text-gray-500 italic mt-4">
+    Un code lisible est plus facile à corriger et à maintenir.
+  </p>
+</div><!-- SLIDE E1: VARIABLES - LES BOÎTES DE RANGEMENT -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    5. Variables – Les boîtes de rangement
+  </h2>
+
+  <ul class="list-disc pl-6 space-y-4 text-xl text-gray-700">
+    <li>
+      Une <b>variable</b> est un espace en mémoire pour stocker une valeur.
+    </li>
+    <li>
+      Analogie : une <b>boîte</b> avec une <b>étiquette</b> dessus.
+    </li>
+    <li>
+      L'étiquette est le nom de la variable, le contenu est la valeur.
+    </li>
+  </ul>
+
+  <pre><code>// Boîte nommée age contenant la valeur 25
+let age = 25;</code></pre>
+</div>
+
+<!-- SLIDE E2: DÉCLARATION DES VARIABLES -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Déclarer une variable
+  </h2>
+
+  <p class="text-xl text-gray-700 mb-4">
+    JavaScript propose trois mots-clés pour déclarer des variables.
+  </p>
+
+  <pre><code>const nom = "Ali";
+let score = 10;
+var ancien = true;</code></pre>
+
+  <ul class="list-disc pl-6 space-y-3 text-xl text-gray-700 mt-4">
+    <li><b>const</b> : valeur qui ne change pas</li>
+    <li><b>let</b> : valeur qui peut changer</li>
+    <li><b>var</b> : ancienne méthode (à éviter)</li>
+  </ul>
+</div>
+
+<!-- SLIDE E3: CONST VS LET VS VAR (TABLEAU) -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    const vs let vs var
+  </h2>
+
+  <div class="overflow-x-auto">
+    <table class="w-full text-xl text-gray-700 border border-gray-200">
+      <thead class="bg-gray-100">
+        <tr>
+          <th class="border px-4 py-2">Mot-clé</th>
+          <th class="border px-4 py-2">Peut changer ?</th>
+          <th class="border px-4 py-2">Portée</th>
+          <th class="border px-4 py-2">À utiliser ?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2 font-bold">const</td>
+          <td class="border px-4 py-2">❌ Non</td>
+          <td class="border px-4 py-2">Bloc</td>
+          <td class="border px-4 py-2">✅ Oui (par défaut)</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2 font-bold">let</td>
+          <td class="border px-4 py-2">✅ Oui</td>
+          <td class="border px-4 py-2">Bloc</td>
+          <td class="border px-4 py-2">✅ Oui</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2 font-bold">var</td>
+          <td class="border px-4 py-2">✅ Oui</td>
+          <td class="border px-4 py-2">Fonction</td>
+          <td class="border px-4 py-2">❌ À éviter</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- SLIDE E4: PORTÉE (SCOPE) SIMPLIFIÉ -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Portée (scope) expliquée simplement
+  </h2>
+
+  <p class="text-xl text-gray-700 mb-4">
+    La portée indique <b>où une variable est accessible</b>.
+  </p>
+
+  <pre><code>if (true) {
+  let x = 10;
+  const y = 20;
+}
+
+// x et y n'existent plus ici</code></pre>
+
+  <pre><code>if (true) {
+  var z = 30;
+}
+
+console.log(z); // 30 (problème)</code></pre>
+</div>
+
+<!-- SLIDE E5: HOISTING SIMPLIFIÉ -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Hoisting (explication simple)
+  </h2>
+
+  <ul class="list-disc pl-6 space-y-4 text-xl text-gray-700">
+    <li>
+      JavaScript "déplace" les déclarations vers le haut du fichier.
+    </li>
+    <li>
+      <b>var</b> est hoisté et initialisé à <b>undefined</b>.
+    </li>
+    <li>
+      <b>let</b> et <b>const</b> sont hoistés mais non accessibles avant déclaration.
+    </li>
+  </ul>
+
+  <pre><code>console.log(a); // undefined
+var a = 10;</code></pre>
+
+  <pre><code>console.log(b); // Erreur
+let b = 20;</code></pre>
+</div>
+
+<!-- SLIDE E6: CONVENTIONS DE NOMMAGE -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Conventions de nommage
+  </h2>
+
+  <h3 class="font-bold text-2xl text-sky-600 mb-3">
+    camelCase (recommandé)
+  </h3>
+
+  <ul class="list-disc pl-6 space-y-3 text-xl text-gray-700">
+    <li>Commence par une minuscule</li>
+    <li>Chaque nouveau mot commence par une majuscule</li>
+    <li>Pas d'espaces, pas de caractères spéciaux</li>
+  </ul>
+
+  <pre><code>// Correct
+let userName = "Ali";
+let totalPrice = 150;
+
+// Incorrect
+let user_name = "Ali";
+let User Name = "Ali";</code></pre>
+</div>
+<!-- SLIDE F1: TYPES DE DONNÉES PRIMITIFS -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    6. Types de données primitifs
+  </h2>
+
+  <ul class="list-disc pl-6 space-y-4 text-xl text-gray-700">
+    <li>
+      Un type de donnée définit la <b>nature</b> d'une valeur.
+    </li>
+    <li>
+      JavaScript possède plusieurs types primitifs.
+    </li>
+    <li>
+      Les types primitifs stockent une <b>valeur simple</b>.
+    </li>
+  </ul>
+</div>
+
+<!-- SLIDE F2: NUMBER -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Number (nombres)
+  </h2>
+
+  <p class="text-xl text-gray-700 mb-4">
+    Le type <b>Number</b> représente les nombres entiers et décimaux.
+  </p>
+
+  <pre><code>let age = 25;
+let price = 19.99;
+let temperature = -5;</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700">
+    <li>Pas de distinction entre entier et décimal</li>
+    <li>Un seul type pour tous les nombres</li>
+  </ul>
+</div>
+
+<!-- SLIDE F3: STRING -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    String (texte)
+  </h2>
+
+  <p class="text-xl text-gray-700 mb-4">
+    Le type <b>String</b> permet de stocker du texte.
+  </p>
+
+  <pre><code>let firstName = "Ali";
+let lastName = 'Zaroual';
+let message = `Bonjour ${firstName}`;</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700">
+    <li>Guillemets simples, doubles ou backticks</li>
+    <li>Les backticks permettent l'interpolation</li>
+  </ul>
+</div>
+
+<!-- SLIDE F4: BOOLEAN -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Boolean (vrai / faux)
+  </h2>
+
+  <p class="text-xl text-gray-700 mb-4">
+    Le type <b>Boolean</b> contient seulement deux valeurs.
+  </p>
+
+  <pre><code>let isLoggedIn = true;
+let isAdmin = false;</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700">
+    <li>Très utilisé dans les conditions</li>
+    <li>Résultat des comparaisons</li>
+  </ul>
+</div>
+
+<!-- SLIDE F5: NULL VS UNDEFINED -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    null et undefined (différence importante)
+  </h2>
+
+  <ul class="list-disc pl-6 space-y-4 text-xl text-gray-700">
+    <li>
+      <b>undefined</b> : variable déclarée mais sans valeur
+    </li>
+    <li>
+      <b>null</b> : absence de valeur volontaire
+    </li>
+  </ul>
+
+  <pre><code>let x;
+console.log(x); // undefined
+
+let y = null;
+console.log(y); // null</code></pre>
+
+  <p class="text-lg text-gray-500 italic mt-4">
+    null = "je sais qu'il n'y a rien"
+  </p>
+</div>
+
+<!-- SLIDE F6: SYMBOL ET TYPEOF -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Symbol et typeof
+  </h2>
+
+  <h3 class="font-bold text-2xl text-sky-600 mb-3">
+    Symbol (mention rapide)
+  </h3>
+
+  <p class="text-xl text-gray-700 mb-4">
+    <b>Symbol</b> crée des valeurs uniques. Utilisé dans des cas avancés.
+  </p>
+
+  <pre><code>const id = Symbol("id");</code></pre>
+
+  <h3 class="font-bold text-2xl text-emerald-600 mt-4 mb-3">
+    Opérateur typeof
+  </h3>
+
+  <pre><code>typeof 10        // "number"
+typeof "hello"   // "string"
+typeof true      // "boolean"
+typeof undefined // "undefined"
+typeof null      // "object" (erreur historique)</code></pre>
+</div>
+
+<!-- SLIDE F7: TYPAGE DYNAMIQUE -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Typage dynamique
+  </h2>
+
+  <p class="text-xl text-gray-700 mb-4">
+    JavaScript est un langage à <b>typage dynamique</b>.
+  </p>
+
+  <pre><code>let value = 10;
+value = "dix";
+value = true;</code></pre>
+
+  <div class="grid grid-cols-2 gap-6 text-xl text-gray-700">
+    <div>
+      <h3 class="font-bold text-emerald-600">Avantage</h3>
+      <p>Flexible et rapide à écrire</p>
+    </div>
+    <div>
+      <h3 class="font-bold text-red-600">Inconvénient</h3>
+      <p>Erreurs possibles si on ne fait pas attention</p>
+    </div>
+  </div>
+</div>
+<!-- SLIDE G1: CHAÎNES DE CARACTÈRES -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    7. Chaînes de caractères (Strings)
+  </h2>
+
+  <ul class="list-disc pl-6 space-y-4 text-xl text-gray-700">
+    <li>
+      Une <b>chaîne de caractères</b> représente du texte.
+    </li>
+    <li>
+      Très utilisée pour afficher des messages, noms, phrases.
+    </li>
+    <li>
+      JavaScript propose plusieurs façons de créer des strings.
+    </li>
+  </ul>
+</div>
+
+<!-- SLIDE G2: CRÉER DES CHAÎNES -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Créer des chaînes de caractères
+  </h2>
+
+  <p class="text-xl text-gray-700 mb-4">
+    Une chaîne peut être écrite avec différents types de guillemets.
+  </p>
+
+  <pre><code>let a = "Bonjour";
+let b = 'Salut';
+let c = `Hello`;</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700">
+    <li>Guillemets simples et doubles: classiques</li>
+    <li>Backticks (` `): méthode moderne</li>
+  </ul>
+</div>
+
+<!-- SLIDE G3: TEMPLATE LITERALS (MODERNE) -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Template literals (backticks)
+  </h2>
+
+  <p class="text-xl text-gray-700 mb-4">
+    Les <b>template literals</b> permettent d'insérer des variables facilement.
+  </p>
+
+  <pre><code>let name = "Ali";
+let age = 25;
+
+let message = `Bonjour ${name}, tu as ${age} ans`;</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700">
+    <li>Plus lisible</li>
+    <li>Recommandé aujourd'hui</li>
+  </ul>
+</div>
+
+<!-- SLIDE G4: CONCATÉNATION -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Concaténation des chaînes
+  </h2>
+
+  <div class="grid grid-cols-2 gap-6 text-xl text-gray-700">
+    <div>
+      <h3 class="font-bold text-red-600">Ancienne méthode</h3>
+      <pre><code>let msg = "Bonjour " + name + ", âge: " + age;</code></pre>
+      <p class="text-sm text-gray-500">
+        Peu lisible et source d'erreurs
+      </p>
+    </div>
+
+    <div>
+      <h3 class="font-bold text-emerald-600">Méthode moderne</h3>
+      <pre><code>let msg = `Bonjour ${name}, âge: ${age}`;</code></pre>
+      <p class="text-sm text-gray-500">
+        Lisible et propre
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE G5: MÉTHODES UTILES -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Méthodes utiles sur les chaînes
+  </h2>
+
+  <pre><code>let text = "  JavaScript  ";
+
+text.length;              // 14
+text.toUpperCase();       // "  JAVASCRIPT  "
+text.toLowerCase();       // "  javascript  "
+text.trim();              // "JavaScript"
+text.includes("Script");  // true</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700 mt-4">
+    <li><b>.length</b> : longueur de la chaîne</li>
+    <li><b>.trim()</b> : supprime les espaces inutiles</li>
+    <li><b>.includes()</b> : vérifie la présence d'un texte</li>
+  </ul>
+</div>
+
+<!-- SLIDE G6: ÉCHAPPER LES CARACTÈRES -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Échapper les caractères spéciaux
+  </h2>
+
+  <p class="text-xl text-gray-700 mb-4">
+    Pour utiliser certains caractères, il faut les échapper avec <b>\</b>.
+  </p>
+
+  <pre><code>let quote = "Il a dit : \"Bonjour\"";
+let path = "C:\\Users\\Ali";</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700">
+    <li>\" pour les guillemets</li>
+    <li>\\ pour le backslash</li>
+    <li>\n pour une nouvelle ligne</li>
+  </ul>
+</div>
+
+<!-- SLIDE G7: ERREURS COURANTES -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Erreurs courantes avec les guillemets
+  </h2>
+
+  <div class="grid grid-cols-2 gap-6">
+    <div>
+      <h3 class="font-bold text-red-600 text-xl mb-2">
+        Incorrect
+      </h3>
+      <pre><code>let msg = "Bonjour';
+let text = 'Il a dit "Salut"';</code></pre>
+    </div>
+
+    <div>
+      <h3 class="font-bold text-emerald-600 text-xl mb-2">
+        Correct
+      </h3>
+      <pre><code>let msg = "Bonjour";
+let text = 'Il a dit "Salut"';
+let text2 = `Il a dit "Salut"`;</code></pre>
+    </div>
+  </div>
+
+  <p class="text-lg text-gray-500 italic mt-4">
+    Toujours ouvrir et fermer les guillemets correctement.
+  </p>
+</div>
+<!-- SLIDE H1: NOMBRES ET MATH -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    8. Nombres et Math
+  </h2>
+
+  <ul class="list-disc pl-6 space-y-4 text-xl text-gray-700">
+    <li>
+      En JavaScript, <b>tous les nombres</b> ont le même type : <b>number</b>.
+    </li>
+    <li>
+      Il n'y a pas de différence entre entiers et décimaux.
+    </li>
+    <li>
+      Les calculs sont faciles, mais il faut connaître les pièges.
+    </li>
+  </ul>
+</div>
+
+<!-- SLIDE H2: LES NOMBRES EN JAVASCRIPT -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Les nombres en JavaScript
+  </h2>
+
+  <pre><code>let a = 10;       // entier
+let b = 3.14;     // décimal
+let c = -5;       // négatif
+let d = 1e3;      // 1000 (notation scientifique)</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700">
+    <li>Un seul type : <b>number</b></li>
+    <li>Basé sur le standard IEEE 754</li>
+  </ul>
+</div>
+
+<!-- SLIDE H3: OPÉRATIONS MATHÉMATIQUES -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Opérations mathématiques de base
+  </h2>
+
+  <pre><code>10 + 5   // addition → 15
+10 - 5   // soustraction → 5
+10 * 5   // multiplication → 50
+10 / 5   // division → 2
+10 % 3   // modulo → 1
+2 ** 3   // puissance → 8</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700 mt-4">
+    <li><b>%</b> : reste de la division</li>
+    <li><b>**</b> : puissance (moderne)</li>
+  </ul>
+</div>
+
+<!-- SLIDE H4: OBJET MATH -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    L'objet Math
+  </h2>
+
+  <pre><code>Math.round(4.6);   // 5
+Math.floor(4.6);   // 4
+Math.ceil(4.1);    // 5
+Math.random();     // nombre entre 0 et 1</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700 mt-4">
+    <li><b>Math.round</b> : arrondi</li>
+    <li><b>Math.floor</b> : arrondi inférieur</li>
+    <li><b>Math.random</b> : nombre aléatoire</li>
+  </ul>
+</div>
+
+<!-- SLIDE H5: PARSEINT ET PARSEFLOAT -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    parseInt et parseFloat
+  </h2>
+
+  <p class="text-xl text-gray-700 mb-4">
+    Utilisés pour convertir du texte en nombre.
+  </p>
+
+  <pre><code>parseInt("42");        // 42
+parseInt("42px");      // 42
+parseFloat("3.14");    // 3.14
+parseFloat("3.14kg");  // 3.14</code></pre>
+
+  <p class="text-lg text-gray-500 italic mt-4">
+    Toujours vérifier les conversions.
+  </p>
+</div>
+
+<!-- SLIDE H6: PROBLÈMES DE PRÉCISION -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Problèmes de précision
+  </h2>
+
+  <pre><code>0.1 + 0.2 === 0.3; // false
+0.1 + 0.2;         // 0.30000000000000004</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700 mt-4">
+    <li>Problème lié au stockage binaire</li>
+    <li>Commun à beaucoup de langages</li>
+  </ul>
+
+  <pre><code>// Solution courante
+Number((0.1 + 0.2).toFixed(2)); // 0.3</code></pre>
+</div>
+
+<!-- SLIDE H7: NaN ET INFINITY -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    NaN et Infinity
+  </h2>
+
+  <pre><code>NaN;            // Not a Number
+10 / "a";       // NaN
+Infinity;       // Infini
+10 / 0;         // Infinity</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700 mt-4">
+    <li><b>NaN</b> : résultat invalide</li>
+    <li><b>Infinity</b> : division par zéro</li>
+  </ul>
+
+  <pre><code>isNaN("abc");   // true</code></pre>
+</div>
+
+<!-- SLIDE H8: ERREURS COURANTES DE CONVERSION -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Erreurs courantes de conversion
+  </h2>
+
+  <div class="grid grid-cols-2 gap-6">
+    <div>
+      <h3 class="font-bold text-red-600 text-xl mb-2">
+        Problème
+      </h3>
+      <pre><code>"10" + 5;   // "105"
+"10" - 5;   // 5</code></pre>
+    </div>
+
+    <div>
+      <h3 class="font-bold text-emerald-600 text-xl mb-2">
+        Solution
+      </h3>
+      <pre><code>Number("10") + 5; // 15
+parseInt("10") + 5;</code></pre>
+    </div>
+  </div>
+
+  <p class="text-lg text-gray-500 italic mt-4">
+    Attention aux calculs avec des chaînes de caractères.
+  </p>
+</div><!-- SLIDE I1: BOOLÉENS -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    9. Booléens et comparaisons
+  </h2>
+
+  <p class="text-xl text-gray-700 mb-4">
+    Un booléen représente une valeur logique.
+  </p>
+
+  <pre><code>true
+false</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700">
+    <li>Résultat des comparaisons</li>
+    <li>Utilisé dans les conditions</li>
+  </ul>
+</div>
+
+<!-- SLIDE I2: OPÉRATEURS DE COMPARAISON -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Opérateurs de comparaison
+  </h2>
+
+  <pre><code>10 > 5     // true
+10 < 5     // false
+10 >= 10  // true
+10 <= 9   // false
+
+5 == "5"   // true (conversion)
+5 === "5"  // false (STRICT)
+
+5 != "5"   // false
+5 !== "5"  // true</code></pre>
+</div>
+
+<!-- SLIDE I3: == VS === (CRUCIAL) -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    == vs === (CRUCIAL)
+  </h2>
+
+  <div class="grid grid-cols-2 gap-6">
+    <div>
+      <h3 class="font-bold text-red-600">== (à éviter)</h3>
+      <pre><code>0 == false   // true
+"" == false  // true
+null == undefined // true</code></pre>
+    </div>
+
+    <div>
+      <h3 class="font-bold text-emerald-600">=== (à utiliser)</h3>
+      <pre><code>0 === false  // false
+"" === false // false
+null === undefined // false</code></pre>
+    </div>
+  </div>
+
+  <p class="text-lg text-gray-500 italic mt-4">
+    Règle d'or: toujours utiliser === et !==
+  </p>
+</div>
+
+<!-- SLIDE I4: OPÉRATEURS LOGIQUES -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Opérateurs logiques
+  </h2>
+
+  <pre><code>true && false  // false
+true || false  // true
+!true          // false</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700 mt-4">
+    <li><b>&&</b> : ET</li>
+    <li><b>||</b> : OU</li>
+    <li><b>!</b> : NON</li>
+  </ul>
+</div>
+
+<!-- SLIDE I5: TRUTHY ET FALSY -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Valeurs truthy et falsy
+  </h2>
+
+  <p class="text-xl text-gray-700 mb-4">
+    En condition, certaines valeurs sont considérées comme false.
+  </p>
+
+  <pre><code>// FALSY
+false
+0
+""
+null
+undefined
+NaN</code></pre>
+
+  <pre><code>// TRUTHY
+"0"
+[]
+{}
+42</code></pre>
+</div>
+
+<!-- SLIDE I6: PIÈGES COURANTS -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Pièges courants
+  </h2>
+
+  <pre><code>if ("0") {
+  console.log("Exécuté"); // OUI
+}
+
+if ([]) {
+  console.log("Exécuté"); // OUI
+}</code></pre>
+</div>
+<!-- SLIDE J1: IF ELSE -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    10. Contrôle du flux – Les décisions
+  </h2>
+
+  <pre><code>if (age >= 18) {
+  console.log("Majeur");
+} else if (age >= 16) {
+  console.log("Presque");
+} else {
+  console.log("Mineur");
+}</code></pre>
+</div>
+
+<!-- SLIDE J2: INDENTATION -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Bonnes pratiques d'indentation
+  </h2>
+
+  <pre><code>if (x > 0) {
+  if (x > 10) {
+    console.log("Grand");
+  }
+}</code></pre>
+</div>
+
+<!-- SLIDE J3: OPÉRATEUR TERNAIRE -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Opérateur ternaire
+  </h2>
+
+  <pre><code>let message = age >= 18
+  ? "Autorisé"
+  : "Refusé";</code></pre>
+
+  <p class="text-lg text-gray-500 italic mt-4">
+    Utiliser seulement pour des conditions simples
+  </p>
+</div>
+
+<!-- SLIDE J4: SWITCH -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Switch
+  </h2>
+
+  <pre><code>switch (jour) {
+  case "Lundi":
+    console.log("Travail");
+    break;
+  case "Samedi":
+  case "Dimanche":
+    console.log("Weekend");
+    break;
+  default:
+    console.log("Inconnu");
+}</code></pre>
+</div>
+
+<!-- SLIDE J5: COMPARAISON -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    if vs switch vs ternaire
+  </h2>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700">
+    <li><b>if</b> : conditions complexes</li>
+    <li><b>switch</b> : plusieurs valeurs fixes</li>
+    <li><b>ternaire</b> : condition simple</li>
+  </ul>
+</div>
+<!-- SLIDE K1: POURQUOI DES BOUCLES -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    11. Boucles – La répétition
+  </h2>
+
+  <p class="text-xl text-gray-700">
+    Les boucles permettent d'éviter de répéter le même code.
+  </p>
+</div>
+
+<!-- SLIDE K2: BOUCLE FOR -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Boucle for classique
+  </h2>
+
+  <pre><code>for (let i = 0; i < 5; i++) {
+  console.log(i);
+}</code></pre>
+</div>
+
+<!-- SLIDE K3: WHILE ET DO WHILE -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    while et do...while
+  </h2>
+
+  <pre><code>let i = 0;
+while (i < 3) {
+  console.log(i);
+  i++;
+}</code></pre>
+
+  <pre><code>let j = 0;
+do {
+  console.log(j);
+  j++;
+} while (j < 1);</code></pre>
+</div>
+
+<!-- SLIDE K4: FOR OF ET FOR IN -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    for...of et for...in
+  </h2>
+
+  <pre><code>for (let n of [1, 2, 3]) {
+  console.log(n);
+}</code></pre>
+
+  <pre><code>for (let key in user) {
+  console.log(key);
+}</code></pre>
+</div>
+
+<!-- SLIDE K5: BREAK ET CONTINUE -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    break et continue
+  </h2>
+
+  <pre><code>for (let i = 0; i < 5; i++) {
+  if (i === 2) continue;
+  if (i === 4) break;
+  console.log(i);
+}</code></pre>
+</div>
+
+<!-- SLIDE K6: ERREURS COURANTES -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Erreurs courantes
+  </h2>
+
+  <pre><code>// Boucle infinie
+while (true) {}
+
+// Off-by-one
+for (let i = 0; i <= 5; i++) {}</code></pre>
+</div>
+
+
+
+              <!-- Navigation -->
+      <div
+        id="navigation"
+        class="bg-gray-50 border-t border-gray-200 p-4 flex justify-between items-center"
+      >
+        <button
+          id="prevBtn"
+          class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          Précédent
+        </button>
+        <div id="slide-counter" class="text-gray-600 text-sm font-medium"></div>
+        <button
+          id="nextBtn"
+          class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          Suivant
+        </button>
+      </div>
+
+      <!-- FOOTER -->
+      <footer
+        class="p-3 text-center text-sm text-gray-500 bg-gray-50 border-t border-gray-200"
+      >
+        Fait avec ❤️ par Oussama Elhousni
+      </footer>
+    </div>
+
+    <script>
+      const slides = document.querySelectorAll(".slide");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const slideCounter = document.getElementById("slide-counter");
+      let currentSlide = 0;
+      const totalSlides = slides.length;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.remove("active");
+          if (i === index) {
+            slide.classList.add("active");
+          }
+        });
+
+        slideCounter.textContent = `Diapositive ${
+          index + 1
+        } sur ${totalSlides}`;
+
+        prevBtn.disabled = index === 0;
+        nextBtn.disabled = index === totalSlides - 1;
+      }
+
+      prevBtn.addEventListener("click", () => {
+        if (currentSlide > 0) {
+          currentSlide--;
+          showSlide(currentSlide);
+        }
+      });
+
+      nextBtn.addEventListener("click", () => {
+        if (currentSlide < totalSlides - 1) {
+          currentSlide++;
+          showSlide(currentSlide);
+        }
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") {
+          prevBtn.click();
+        } else if (e.key === "ArrowRight") {
+          nextBtn.click();
+        }
+      });
+
+      showSlide(currentSlide);
+    </script>
+  </body>
+</html>

@@ -1755,6 +1755,296 @@ const f = afficher;  // ✅</code></pre>
     Bien distinguer appeler une fonction et la passer.
   </p>
 </div>
+<!-- SLIDE M1: INTRODUCTION AUX TABLEAUX -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+     Tableaux (Arrays) – Les listes
+  </h2>
+
+  <ul class="list-disc pl-6 space-y-4 text-xl text-gray-700">
+    <li>Un <b>tableau</b> est une liste ordonnée de valeurs.</li>
+    <li>Il peut contenir différents types de données.</li>
+    <li>Très utilisé pour stocker plusieurs éléments.</li>
+  </ul>
+
+  <pre><code>let numbers = [1, 2, 3, 4];</code></pre>
+</div>
+<!-- SLIDE M2: CRÉER ET ACCÉDER AUX ÉLÉMENTS -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Créer un tableau et accéder aux éléments
+  </h2>
+
+  <pre><code>let fruits = ["Pomme", "Banane", "Orange"];
+
+console.log(fruits[0]); // Pomme
+console.log(fruits[1]); // Banane</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700 mt-4">
+    <li>L'index commence à <b>0</b></li>
+    <li>Accès avec les crochets []</li>
+  </ul>
+</div>
+<!-- SLIDE M3: LENGTH ET MÉTHODES DE BASE -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Propriété .length et méthodes de base
+  </h2>
+
+  <pre><code>let arr = [1, 2, 3];
+
+arr.length; // 3
+
+arr.push(4);   // ajoute à la fin
+arr.pop();     // supprime le dernier
+arr.shift();   // supprime le premier
+arr.unshift(0); // ajoute au début</code></pre>
+</div>
+<!-- ============================== -->
+<!-- SECTION 12 : FONCTIONS D’ORDRE SUPÉRIEUR -->
+<!-- ============================== -->
+
+<!-- SLIDE M1: INTRODUCTION -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    12. Fonctions d’ordre supérieur (High Order Functions)
+  </h2>
+
+  <ul class="list-disc pl-6 space-y-4 text-xl text-gray-700">
+    <li>Une fonction d’ordre supérieur reçoit une fonction en paramètre.</li>
+    <li>Les méthodes modernes des tableaux utilisent des <b>callbacks</b>.</li>
+    <li>Ces méthodes ne modifient généralement pas le tableau original.</li>
+  </ul>
+
+  <pre><code>array.method((value, index, array) => {
+  // logique
+});</code></pre>
+
+  <p class="text-lg text-gray-500 italic mt-4">
+    value = élément courant | index = position | array = tableau original
+  </p>
+</div>
+<!-- SLIDE M2: MAP -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    .map() – Transformer les éléments
+  </h2>
+
+  <pre><code>let numbers = [10, 20, 30];
+
+let doubled = numbers.map((value, index, array) => {
+  console.log(value, index);
+  return value * 2;
+});
+
+console.log(doubled); // [20, 40, 60]</code></pre>
+
+  <ul class="list-disc pl-6 space-y-3 text-xl text-gray-700 mt-4">
+    <li>Retourne un <b>nouveau tableau</b></li>
+    <li>Doit retourner une valeur</li>
+    <li>Ne modifie pas l’original</li>
+  </ul>
+</div>
+<!-- SLIDE M3: FILTER -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    .filter() – Filtrer selon une condition
+  </h2>
+
+  <pre><code>let numbers = [10, 20, 30];
+
+let result = numbers.filter((value, index, array) => {
+  return value > 15;
+});
+
+console.log(result); // [20, 30]</code></pre>
+
+  <ul class="list-disc pl-6 space-y-3 text-xl text-gray-700 mt-4">
+    <li>Le callback doit retourner <b>true</b> ou <b>false</b></li>
+    <li>true → élément conservé</li>
+    <li>false → élément supprimé</li>
+  </ul>
+</div>
+<!-- SLIDE M4: FIND & FOREACH -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    .find() et .forEach()
+  </h2>
+
+  <pre><code>let numbers = [10, 20, 30];
+
+let found = numbers.find((value, index, array) => {
+  return value === 20;
+});
+
+numbers.forEach((value, index) => {
+  console.log(value);
+});</code></pre>
+
+  <ul class="list-disc pl-6 space-y-3 text-xl text-gray-700 mt-4">
+    <li><b>find()</b> retourne le premier élément trouvé</li>
+    <li><b>forEach()</b> ne retourne rien</li>
+    <li>forEach est utilisé pour exécuter une action</li>
+  </ul>
+</div>
+<!-- SLIDE M5: REDUCE -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    .reduce() – Combiner les valeurs
+  </h2>
+
+  <pre><code>let numbers = [10, 20, 30];
+
+let total = numbers.reduce(
+  (accumulator, currentValue, index, array) => {
+    return accumulator + currentValue;
+  },
+  0
+);
+
+console.log(total); // 60</code></pre>
+
+  <ul class="list-disc pl-6 space-y-3 text-xl text-gray-700 mt-4">
+    <li><b>accumulator</b> → valeur accumulée</li>
+    <li><b>currentValue</b> → élément courant</li>
+    <li><b>0</b> → valeur initiale</li>
+  </ul>
+</div>
+<!-- SLIDE M6: IMMUTABILITÉ -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Mutation vs Immutabilité
+  </h2>
+
+  <pre><code>let arr = [1, 2, 3];
+
+// Mutation ❌
+arr.push(4);
+
+// Immutabilité ✅
+let newArr = [...arr, 4];</code></pre>
+
+  <ul class="list-disc pl-6 space-y-3 text-xl text-gray-700 mt-4">
+    <li>Mutation = modifier le tableau original</li>
+    <li>Immutabilité = créer une copie</li>
+    <li>Fondamental pour React</li>
+  </ul>
+</div>
+
+<!-- SLIDE M6: SPREAD ET IMMUTABILITÉ -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Spread operator et immutabilité
+  </h2>
+
+  <pre><code>let arr = [1, 2, 3];
+let newArr = [...arr, 4];</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700 mt-4">
+    <li>...</li>
+    <li>Évite de modifier le tableau original</li>
+    <li>Bonne pratique moderne</li>
+  </ul>
+</div>
+<!-- SLIDE M7: ERREURS COURANTES -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Erreurs courantes avec les index
+  </h2>
+
+  <pre><code>let arr = [1, 2, 3];
+
+console.log(arr[5]); // undefined</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700 mt-4">
+    <li>Accès hors limite → undefined</li>
+    <li>Attention aux boucles mal définies</li>
+  </ul>
+</div>
+<!-- SLIDE N1: INTRODUCTION AUX OBJETS -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    13. Objets – Les structures clé-valeur
+  </h2>
+
+  <ul class="list-disc pl-6 space-y-4 text-xl text-gray-700">
+    <li>Un <b>objet</b> contient des paires clé-valeur.</li>
+    <li>Permet de représenter des entités réelles.</li>
+  </ul>
+
+  <pre><code>let user = {
+  name: "Ali",
+  age: 25
+};</code></pre>
+</div>
+<!-- SLIDE N2: NOTATION POINT VS CROCHET -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Notation point vs crochet
+  </h2>
+
+  <pre><code>user.name;      // notation point
+user["age"];    // notation crochet</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700 mt-4">
+    <li>Point: simple et lisible</li>
+    <li>Crochet: utile pour clé dynamique</li>
+  </ul>
+</div>
+<!-- SLIDE N3: MODIFIER ET SUPPRIMER -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Ajouter, modifier, supprimer
+  </h2>
+
+  <pre><code>user.email = "ali@mail.com";
+user.age = 30;
+delete user.email;</code></pre>
+</div>
+<!-- SLIDE N4: MÉTHODES ET THIS -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Méthodes et mot-clé this
+  </h2>
+
+  <pre><code>let user = {
+  name: "Ali",
+  greet() {
+    console.log("Bonjour " + this.name);
+  }
+};
+
+user.greet();</code></pre>
+
+  <p class="text-xl text-gray-700 mt-4">
+    this fait référence à l'objet courant.
+  </p>
+</div>
+<!-- SLIDE N5: SPREAD ET DESTRUCTURATION -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Spread et destructuration
+  </h2>
+
+  <pre><code>let newUser = { ...user, city: "Casablanca" };
+
+let { name, age } = user;</code></pre>
+</div>
+<!-- SLIDE N6: JSON -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    JSON.stringify et JSON.parse
+  </h2>
+
+  <pre><code>let json = JSON.stringify(user);
+
+let obj = JSON.parse(json);</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700 mt-4">
+    <li>stringify → objet vers texte</li>
+    <li>parse → texte vers objet</li>
+  </ul>
+</div>
 
 
               <!-- Navigation -->

@@ -2046,7 +2046,585 @@ let obj = JSON.parse(json);</code></pre>
   </ul>
 </div>
 
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    14. Méthodes les plus utilisées (Essentiel développeur)
+  </h2>
 
+  <ul class="list-disc pl-6 space-y-4 text-xl text-gray-700">
+    <li>Les méthodes permettent de manipuler facilement les données.</li>
+    <li>80% du JavaScript moderne utilise ces fonctions.</li>
+    <li>Très utilisées en React, APIs et Node.js.</li>
+  </ul>
+
+  <p class="text-lg text-gray-500 italic mt-4">
+    Maîtriser ces méthodes = passer du niveau débutant au niveau professionnel.
+  </p>
+</div><div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Arrays : includes() et indexOf()
+  </h2>
+
+  <pre><code>let fruits = ["Pomme", "Banane", "Orange"];
+
+fruits.includes("Banane"); // true
+fruits.indexOf("Orange");  // 2</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700">
+    <li><b>includes()</b> → vérifie la présence</li>
+    <li><b>indexOf()</b> → retourne la position</li>
+  </ul>
+</div><div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    slice() vs splice()
+  </h2>
+
+  <pre><code>let arr = [1,2,3,4];
+
+arr.slice(1,3); // [2,3] (copie)
+
+arr.splice(1,2); // supprime éléments</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700">
+    <li><b>slice()</b> → ne modifie PAS le tableau</li>
+    <li><b>splice()</b> → modifie le tableau</li>
+  </ul>
+</div><div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    some() et every()
+  </h2>
+
+  <pre><code>let numbers = [10,20,30];
+
+numbers.some(n => n > 25);  // true
+numbers.every(n => n > 5);  // true</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700">
+    <li><b>some()</b> → au moins un élément valide</li>
+    <li><b>every()</b> → tous les éléments valides</li>
+  </ul>
+</div><div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Strings : replace() et replaceAll()
+  </h2>
+
+  <pre><code>let text = "Bonjour Ali Ali";
+
+text.replace("Ali", "Sara");
+// "Bonjour Sara Ali"
+
+text.replaceAll("Ali", "Sara");
+// "Bonjour Sara Sara"</code></pre>
+</div><div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    split() et join()
+  </h2>
+
+  <pre><code>let sentence = "JavaScript est puissant";
+
+let words = sentence.split(" ");
+console.log(words);
+
+words.join("-");
+</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700">
+    <li><b>split()</b> → string → tableau</li>
+    <li><b>join()</b> → tableau → string</li>
+  </ul>
+</div><div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    startsWith() et endsWith()
+  </h2>
+
+  <pre><code>let email = "user@gmail.com";
+
+email.startsWith("user"); // true
+email.endsWith(".com");   // true</code></pre>
+
+  <p class="text-xl text-gray-700">
+    Très utilisé pour validation de formulaires.
+  </p>
+</div><div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Object.keys(), values(), entries()
+  </h2>
+
+  <pre><code>let user = {
+  name: "Ali",
+  age: 25
+};
+
+Object.keys(user);   // ["name","age"]
+Object.values(user); // ["Ali",25]
+Object.entries(user);
+</code></pre>
+</div><div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Object.assign()
+  </h2>
+
+  <pre><code>let user = { name: "Ali" };
+
+let updated =
+  Object.assign({}, user, { age: 30 });
+
+console.log(updated);</code></pre>
+
+  <p class="text-xl text-gray-700">
+    Copier un objet sans modifier l’original.
+  </p>
+</div><div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    hasOwnProperty()
+  </h2>
+
+  <pre><code>let user = { name: "Ali" };
+
+user.hasOwnProperty("name"); // true
+user.hasOwnProperty("age");  // false</code></pre>
+
+  <p class="text-xl text-gray-700">
+    Vérifie si une propriété existe.
+  </p>
+</div><div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Méthodes indispensables (Résumé)
+  </h2>
+
+  <div class="grid grid-cols-3 gap-6 text-xl text-gray-700">
+
+    <div>
+      <h3 class="font-bold text-sky-600">Arrays</h3>
+      map()
+      filter()
+      find()
+      reduce()
+      slice()
+    </div>
+
+    <div>
+      <h3 class="font-bold text-emerald-600">Strings</h3>
+      includes()
+      split()
+      replace()
+      trim()
+    </div>
+
+    <div>
+      <h3 class="font-bold text-purple-600">Objects</h3>
+      keys()
+      values()
+      entries()
+      assign()
+    </div>
+
+  </div>
+
+  <p class="text-lg text-gray-500 italic mt-6">
+    Ces méthodes couvrent la majorité du JavaScript moderne.
+  </p>
+</div><!-- ============================== -->
+<!-- SECTION 17 : DATES EN JAVASCRIPT -->
+<!-- ============================== -->
+
+<!-- SLIDE P1 -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    17. Dates en JavaScript
+  </h2>
+
+  <ul class="list-disc pl-6 space-y-4 text-xl text-gray-700">
+    <li>Les dates permettent de gérer le temps dans une application.</li>
+    <li>Utilisées pour événements, réservations, authentification, logs.</li>
+    <li>JavaScript utilise l’objet <b>Date</b>.</li>
+  </ul>
+
+  <pre><code>let today = new Date();</code></pre>
+
+  <p class="text-lg text-gray-500 italic mt-4">
+    Une date représente un moment précis dans le temps.
+  </p>
+</div>
+
+<!-- SLIDE P2 -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Création d’une date
+  </h2>
+
+  <pre><code>// Date actuelle
+new Date();
+
+// Depuis une chaîne
+new Date("2026-03-10");
+
+// Année, mois, jour
+new Date(2026, 2, 10);</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700">
+    <li>⚠ Les mois commencent à 0</li>
+    <li>0 = Janvier, 11 = Décembre</li>
+  </ul>
+</div>
+
+<!-- SLIDE P3 -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Date actuelle
+  </h2>
+
+  <pre><code>let now = new Date();
+
+console.log(now);</code></pre>
+
+  <ul class="list-disc pl-6 space-y-3 text-xl text-gray-700">
+    <li>Retourne la date et l’heure actuelles.</li>
+    <li>Dépend du fuseau horaire utilisateur.</li>
+  </ul>
+</div>
+
+<!-- SLIDE P4 -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Lire une date
+  </h2>
+
+  <pre><code>let d = new Date();
+
+d.getFullYear();
+d.getMonth();
+d.getDate();
+d.getDay();</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700">
+    <li>getMonth() → mois (0-11)</li>
+    <li>getDay() → jour semaine (0 = dimanche)</li>
+  </ul>
+</div>
+
+<!-- SLIDE P5 -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Heures et minutes
+  </h2>
+
+  <pre><code>let d = new Date();
+
+d.getHours();
+d.getMinutes();
+d.getSeconds();</code></pre>
+
+  <p class="text-xl text-gray-700">
+    Permet de gérer horaires, timers et affichage temps réel.
+  </p>
+</div>
+
+<!-- SLIDE P6 -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Modifier une date
+  </h2>
+
+  <pre><code>let d = new Date();
+
+d.setFullYear(2030);
+d.setMonth(5);
+d.setDate(20);</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700">
+    <li>Les méthodes set modifient la date originale.</li>
+  </ul>
+</div>
+
+<!-- SLIDE P7 -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Formatage des dates
+  </h2>
+
+  <pre><code>let d = new Date();
+
+d.toLocaleDateString();
+d.toLocaleTimeString();
+
+d.toLocaleString("fr-FR");</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700">
+    <li>Format automatique selon le pays.</li>
+    <li>Très utilisé pour affichage utilisateur.</li>
+  </ul>
+</div>
+
+<!-- SLIDE P8 -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Timestamp et Date.now()
+  </h2>
+
+  <pre><code>Date.now();</code></pre>
+
+  <p class="text-xl text-gray-700 mb-4">
+    Retourne le nombre de millisecondes depuis 1970.
+  </p>
+
+  <pre><code>let timestamp = Date.now();
+let date = new Date(timestamp);</code></pre>
+</div>
+
+<!-- SLIDE P9 -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Calcul entre deux dates
+  </h2>
+
+  <pre><code>let start = new Date("2026-03-01");
+let end = new Date("2026-03-10");
+
+let diff = end - start;
+
+let days = diff / (1000 * 60 * 60 * 24);
+
+console.log(days);</code></pre>
+
+  <p class="text-xl text-gray-700">
+    Conversion millisecondes → jours.
+  </p>
+</div>
+
+<!-- SLIDE P10 -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Fuseaux horaires (Bonnes pratiques)
+  </h2>
+
+  <ul class="list-disc pl-6 space-y-3 text-xl text-gray-700">
+    <li>Toujours stocker les dates en UTC.</li>
+    <li>Afficher selon la localisation utilisateur.</li>
+    <li>Utiliser ISO format : YYYY-MM-DD.</li>
+  </ul>
+
+  <pre><code>new Date().toISOString();</code></pre>
+</div>
+
+<!-- SLIDE P11 -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Erreurs courantes avec les dates
+  </h2>
+
+  <pre><code>// Mois commence à 0
+new Date(2026, 0, 1);
+
+// Mauvais format
+new Date("10/03/2026");</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700">
+    <li>Confusion mois indexés à 0</li>
+    <li>Formats différents selon navigateurs</li>
+    <li>Fuseaux horaires ignorés</li>
+  </ul>
+
+  <p class="text-lg text-gray-500 italic mt-4">
+    Toujours préférer le format ISO.
+  </p>
+</div>
+<!-- ============================== -->
+<!-- SECTION 17 : LE DOM -->
+<!-- ============================== -->
+
+<!-- SLIDE Q1 -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    17. Le DOM — Manipuler la page web
+  </h2>
+
+  <ul class="list-disc pl-6 space-y-4 text-xl text-gray-700">
+    <li>Le DOM permet à JavaScript de modifier une page HTML.</li>
+    <li>Chaque élément HTML devient un objet manipulable.</li>
+    <li>JavaScript peut lire, modifier ou créer du contenu.</li>
+  </ul>
+
+  <p class="text-lg text-gray-500 italic mt-4">
+    DOM = pont entre JavaScript et HTML.
+  </p>
+</div>
+
+<!-- SLIDE Q2 -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Qu'est-ce que le DOM ?
+  </h2>
+
+  <p class="text-xl text-gray-700 mb-4">
+    Le navigateur transforme le HTML en un <b>arbre</b> appelé DOM.
+  </p>
+
+  <pre><code>&lt;body&gt;
+  &lt;h1&gt;Titre&lt;/h1&gt;
+  &lt;p&gt;Texte&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+
+  <p class="text-xl text-gray-700">
+    Chaque balise devient un <b>nœud</b> manipulable.
+  </p>
+</div>
+
+<!-- SLIDE Q3 -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Visualiser le DOM (DevTools)
+  </h2>
+
+  <ul class="list-disc pl-6 space-y-3 text-xl text-gray-700">
+    <li>Clic droit → Inspecter</li>
+    <li>Onglet <b>Elements</b></li>
+    <li>Voir la structure HTML en temps réel</li>
+    <li>Tester des modifications instantanément</li>
+  </ul>
+</div>
+
+<!-- SLIDE Q4 -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Sélectionner des éléments
+  </h2>
+
+  <pre><code>// Par ID
+document.getElementById("title");
+
+// Moderne (recommandé)
+document.querySelector(".box");
+
+// Plusieurs éléments
+document.querySelectorAll("p");</code></pre>
+
+  <p class="text-lg text-gray-500 italic mt-4">
+    querySelector utilise les sélecteurs CSS.
+  </p>
+</div>
+
+<!-- SLIDE Q5 -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Navigation entre les éléments
+  </h2>
+
+  <pre><code>element.parentElement;
+element.children;
+element.firstElementChild;
+element.lastElementChild;
+element.nextElementSibling;
+element.previousElementSibling;</code></pre>
+
+  <p class="text-xl text-gray-700">
+    Permet de parcourir l’arbre DOM.
+  </p>
+</div>
+
+<!-- SLIDE Q6 -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Modifier le contenu
+  </h2>
+
+  <pre><code>const title = document.querySelector("h1");
+
+title.textContent = "Nouveau titre";
+
+title.innerHTML = "&lt;span&gt;Hello&lt;/span&gt;";</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700">
+    <li><b>textContent</b> → texte simple (sécurisé)</li>
+    <li><b>innerHTML</b> → interprète du HTML</li>
+  </ul>
+</div>
+
+<!-- SLIDE Q7 -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Modifier les styles
+  </h2>
+
+  <pre><code>const box = document.querySelector(".box");
+
+box.style.backgroundColor = "blue";
+box.style.padding = "20px";</code></pre>
+
+  <p class="text-xl text-gray-700">
+    Les propriétés CSS deviennent camelCase.
+  </p>
+</div>
+
+<!-- SLIDE Q8 -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Modifier les classes
+  </h2>
+
+  <pre><code>element.classList.add("active");
+element.classList.remove("hidden");
+element.classList.toggle("dark");
+element.classList.contains("active");</code></pre>
+
+  <p class="text-xl text-gray-700">
+    Meilleure pratique : modifier les classes plutôt que les styles.
+  </p>
+</div>
+
+<!-- SLIDE Q9 -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Créer des éléments
+  </h2>
+
+  <pre><code>const li = document.createElement("li");
+
+li.textContent = "Nouvel élément";</code></pre>
+
+  <p class="text-xl text-gray-700">
+    L’élément existe mais n’est pas encore affiché.
+  </p>
+</div>
+
+<!-- SLIDE Q10 -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Ajouter et supprimer des éléments
+  </h2>
+
+  <pre><code>const ul = document.querySelector("ul");
+
+ul.appendChild(li);
+
+li.remove();</code></pre>
+
+  <ul class="list-disc pl-6 space-y-2 text-xl text-gray-700">
+    <li><b>appendChild()</b> → ajoute dans le DOM</li>
+    <li><b>remove()</b> → supprime un élément</li>
+  </ul>
+</div>
+
+<!-- SLIDE Q11 -->
+<div class="slide">
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">
+    Erreurs courantes DOM
+  </h2>
+
+  <pre><code>// élément non chargé
+document.querySelector("button")
+  .addEventListener("click", fn);</code></pre>
+
+  <ul class="list-disc pl-6 space-y-3 text-xl text-gray-700">
+    <li>Script exécuté avant le HTML</li>
+    <li>Sélecteur incorrect</li>
+    <li>Confusion innerHTML / textContent</li>
+  </ul>
+
+  <p class="text-lg text-gray-500 italic mt-4">
+    Placer le script en bas du body ou utiliser DOMContentLoaded.
+  </p>
+</div>
               <!-- Navigation -->
       <div
         id="navigation"
